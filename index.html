@@ -159,39 +159,254 @@
 
   pointer-events: none;
 
-  background-image:
-    radial-gradient(
-      circle,
-      rgba(255, 245, 210, 0.95) 1px,
-      transparent 1.5px
-    ),
-    radial-gradient(
-      circle,
-      rgba(255, 255, 255, 0.8) 1px,
-      transparent 1.5px
-    );
-
-  background-size:
-    90px 90px,
-    140px 140px;
-
-  background-position:
-    10px 20px,
-    50px 70px;
-
-  opacity: 0.55;
-  animation: twinkle 4s ease-in-out infinite alternate;
-
   will-change: transform;
 }
-    @keyframes twinkle {
-  from {
-    opacity: 0.35;
+
+
+/* 星そのもの */
+
+.hero-stars span {
+  position: absolute;
+
+  width: 3px;
+  height: 3px;
+
+  background: rgba(255, 248, 220, 0.95);
+
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 4px rgba(255, 245, 210, 0.9),
+    0 0 10px rgba(255, 225, 160, 0.35);
+
+  animation:
+    star-twinkle 4s ease-in-out infinite alternate;
+}
+
+
+/* 瞬き */
+
+@keyframes star-twinkle {
+
+  0% {
+    opacity: 0.25;
+    transform: scale(0.8);
   }
 
-  to {
-    opacity: 0.7;
+  50% {
+    opacity: 1;
+    transform: scale(1.25);
   }
+
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+
+}
+
+
+/* =========================
+   星の位置
+========================= */
+
+.hero-stars span:nth-child(1) {
+  top: 8%;
+  left: 12%;
+}
+
+.hero-stars span:nth-child(2) {
+  top: 15%;
+  left: 39%;
+}
+
+.hero-stars span:nth-child(3) {
+  top: 10%;
+  left: 78%;
+}
+
+.hero-stars span:nth-child(4) {
+  top: 22%;
+  left: 64%;
+}
+
+.hero-stars span:nth-child(5) {
+  top: 26%;
+  left: 18%;
+}
+
+.hero-stars span:nth-child(6) {
+  top: 31%;
+  left: 87%;
+}
+
+.hero-stars span:nth-child(7) {
+  top: 35%;
+  left: 47%;
+}
+
+.hero-stars span:nth-child(8) {
+  top: 42%;
+  left: 7%;
+}
+
+.hero-stars span:nth-child(9) {
+  top: 46%;
+  left: 73%;
+}
+
+.hero-stars span:nth-child(10) {
+  top: 50%;
+  left: 29%;
+}
+
+.hero-stars span:nth-child(11) {
+  top: 54%;
+  left: 91%;
+}
+
+.hero-stars span:nth-child(12) {
+  top: 59%;
+  left: 56%;
+}
+
+.hero-stars span:nth-child(13) {
+  top: 63%;
+  left: 15%;
+}
+
+.hero-stars span:nth-child(14) {
+  top: 68%;
+  left: 76%;
+}
+
+.hero-stars span:nth-child(15) {
+  top: 72%;
+  left: 35%;
+}
+
+.hero-stars span:nth-child(16) {
+  top: 77%;
+  left: 84%;
+}
+
+.hero-stars span:nth-child(17) {
+  top: 81%;
+  left: 8%;
+}
+
+.hero-stars span:nth-child(18) {
+  top: 87%;
+  left: 52%;
+}
+
+.hero-stars span:nth-child(19) {
+  top: 92%;
+  left: 68%;
+}
+
+.hero-stars span:nth-child(20) {
+  top: 95%;
+  left: 24%;
+}
+
+.hero-stars span:nth-child(21) {
+  top: 18%;
+  left: 93%;
+}
+
+.hero-stars span:nth-child(22) {
+  top: 38%;
+  left: 24%;
+}
+
+.hero-stars span:nth-child(23) {
+  top: 57%;
+  left: 41%;
+}
+
+.hero-stars span:nth-child(24) {
+  top: 74%;
+  left: 4%;
+}
+
+.hero-stars span:nth-child(25) {
+  top: 89%;
+  left: 90%;
+}
+
+.hero-stars span:nth-child(26) {
+  top: 28%;
+  left: 53%;
+}
+
+.hero-stars span:nth-child(27) {
+  top: 66%;
+  left: 92%;
+}
+
+.hero-stars span:nth-child(28) {
+  top: 12%;
+  left: 57%;
+}
+
+.hero-stars span:nth-child(29) {
+  top: 48%;
+  left: 82%;
+}
+
+.hero-stars span:nth-child(30) {
+  top: 84%;
+  left: 38%;
+}
+
+
+/* =========================
+   大きさをばらけさせる
+========================= */
+
+.hero-stars span:nth-child(3n) {
+  width: 2px;
+  height: 2px;
+}
+
+.hero-stars span:nth-child(5n) {
+  width: 4px;
+  height: 4px;
+}
+
+.hero-stars span:nth-child(11n) {
+  width: 5px;
+  height: 5px;
+
+  box-shadow:
+    0 0 5px rgba(255, 248, 220, 1),
+    0 0 14px rgba(255, 220, 150, 0.65);
+}
+
+
+/* =========================
+   瞬く速度をばらけさせる
+========================= */
+
+.hero-stars span:nth-child(2n) {
+  animation-duration: 5.3s;
+}
+
+.hero-stars span:nth-child(3n) {
+  animation-duration: 6.7s;
+}
+
+.hero-stars span:nth-child(5n) {
+  animation-duration: 3.8s;
+}
+
+.hero-stars span:nth-child(7n) {
+  animation-delay: 1.3s;
+}
+
+.hero-stars span:nth-child(11n) {
+  animation-delay: 2.1s;
 }
     
     /* 星のきらめき */
@@ -757,7 +972,16 @@
 
 <section class="hero" id="top">
   <div class="hero-bg"></div>
-<div class="hero-stars"></div>
+<div class="hero-stars">
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+
+  <span></span><span></span><span></span><span></span><span></span>
+  <span></span><span></span><span></span><span></span><span></span>
+</div>
   <div class="hero-content">
 
     <div class="hero-symbol">
