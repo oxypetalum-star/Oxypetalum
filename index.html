@@ -659,8 +659,8 @@
 }
 
 .circle-image {
-  width: 170px;
-  height: 170px;
+  width: 210px;
+  height: 210px;
   margin: 0 auto 18px;
   border-radius: 50%;
   border: 2px solid rgba(216, 185, 106, 0.9);
@@ -743,8 +743,8 @@
   }
 
   .circle-image {
-    width: 120px;
-    height: 120px;
+    width: 200px;
+    height: 200px;
   }
 
   .novel-card {
@@ -803,7 +803,19 @@
 
       letter-spacing: 2px;
     }
+.circle-link {
+  display: inline-block;
+  border-radius: 50%;
+}
 
+.circle-link:hover .circle-image {
+  transform: translateY(-6px) scale(1.03);
+}
+
+.circle-link:focus-visible {
+  outline: 2px solid #d8b96a;
+  outline-offset: 6px;
+}
 
     /* =========================
        MEMO
@@ -1148,31 +1160,43 @@
 
     
 
-    <div class="novel-grid">
+<div class="novel-card">
 
-      <a href="#long" class="novel-card">
-        <div class="circle-image">
-          <img src="sun-icon.PNG" alt="LONG">
-        </div>
-        <h3>LONG</h3>
-        
-      </a>
+  <a href="#long" class="circle-link">
+    <div class="circle-image">
+      <img src="sun-icon.PNG" alt="LONG">
+    </div>
+  </a>
 
-      <a href="#short" class="novel-card">
-        <div class="circle-image">
-          <img src="moon-icon.PNG" alt="SHORT">
-        </div>
-        <h3>SHORT</h3>
-        
-      </a>
+  <h3>LONG</h3>
 
-      <a href="#other" class="novel-card">
-        <div class="circle-image">
-          <img src="saturn-icon.PNG" alt="OTHER">
-        </div>
-        <h3>OTHER</h3>
-     
-      </a>
+</div>
+
+<div class="novel-card">
+
+  <a href="#short" class="circle-link">
+    <div class="circle-image">
+      <img src="moon-icon.PNG" alt="SHORT">
+    </div>
+  </a>
+
+  <h3>SHORT</h3>
+
+
+</div>
+
+   <div class="novel-card">
+
+  <a href="#other" class="circle-link">
+    <div class="circle-image">
+      <img src="saturn-icon.PNG" alt="OTHER">
+    </div>
+  </a>
+
+  <h3>OTHER</h3>
+
+
+</div>
 
     </div>
 
