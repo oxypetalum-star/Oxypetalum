@@ -146,7 +146,54 @@
 
   will-change: transform;
 }
+.hero-stars {
+  position: absolute;
 
+  top: -10%;
+  left: 0;
+
+  width: 100%;
+  height: 120%;
+
+  z-index: 1;
+
+  pointer-events: none;
+
+  background-image:
+    radial-gradient(
+      circle,
+      rgba(255, 245, 210, 0.95) 1px,
+      transparent 1.5px
+    ),
+    radial-gradient(
+      circle,
+      rgba(255, 255, 255, 0.8) 1px,
+      transparent 1.5px
+    );
+
+  background-size:
+    90px 90px,
+    140px 140px;
+
+  background-position:
+    10px 20px,
+    50px 70px;
+
+  opacity: 0.55;
+  animation: twinkle 4s ease-in-out infinite alternate;
+
+  will-change: transform;
+}
+    @keyframes twinkle {
+  from {
+    opacity: 0.35;
+  }
+
+  to {
+    opacity: 0.7;
+  }
+}
+    
     /* 星のきらめき */
 
     .hero::after {
@@ -710,7 +757,7 @@
 
 <section class="hero" id="top">
   <div class="hero-bg"></div>
-
+<div class="hero-stars"></div>
   <div class="hero-content">
 
     <div class="hero-symbol">
@@ -1049,9 +1096,19 @@
   const background =
     document.querySelector(".hero-bg");
 
+  const stars =
+    document.querySelector(".hero-stars");
+
+
   if (background) {
     background.style.transform =
-      "translateY(" + scrollY * 0.3 + "px)";
+      "translateY(" + scrollY * 0.2 + "px)";
+  }
+
+
+  if (stars) {
+    stars.style.transform =
+      "translateY(" + scrollY * 0.45 + "px)";
   }
 
 });
