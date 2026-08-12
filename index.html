@@ -782,61 +782,25 @@
       text-align: center;
     }
 
-    .circle-image {
-      width: 150px;
-      height: 150px;
+.circle-image {
+  width: 220px;
+  margin: 0 auto 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-      margin: 0 auto 18px;
-
-      border-radius: 50%;
-
-      border: 1px solid rgba(216,185,106,0.6);
-
-      display: flex;
-      justify-content: center;
-      align-items: center;
-
-      font-size: 40px;
-
-      box-shadow:
-        0 0 30px rgba(70,130,210,0.15);
-
-      transition: 0.4s;
-    }
+  background: none;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  overflow: visible;
+}
 
     .circle-image:hover {
       transform: translateY(-8px) scale(1.03);
     }
 
-    .circle-item:nth-child(1) .circle-image {
-      background:
-        radial-gradient(
-          circle at 30% 20%,
-          #6faee2,
-          #173d73 50%,
-          #07152f
-        );
-    }
 
-    .circle-item:nth-child(2) .circle-image {
-      background:
-        radial-gradient(
-          circle at 30% 30%,
-          #a9c4ea,
-          #3b5687 45%,
-          #111b2d
-        );
-    }
-
-    .circle-item:nth-child(3) .circle-image {
-      background:
-        radial-gradient(
-          circle at 50% 20%,
-          #799ccc,
-          #263d6b 50%,
-          #081227
-        );
-    }
 
     .circle-item p {
       margin: 0;
@@ -1039,6 +1003,13 @@
 
         border: 1px solid rgba(216,185,106,0.25);
       }
+      .circle-image {
+  width: 180px;
+}
+
+.circle-image img {
+  max-width: 180px;
+}
 
       nav.open {
         display: flex;
@@ -1181,9 +1152,7 @@
       <h2>NOVEL</h2>
     </div>
 
-    <p class="section-lead">
-      物語を、長編・短編・その他に分けてまとめています。
-    </p>
+    
 
     <div class="novel-grid">
 
@@ -1192,7 +1161,7 @@
           <img src="sun-icon.PNG" alt="LONG">
         </div>
         <h3>LONG</h3>
-        <p>長編作品</p>
+        
       </a>
 
       <a href="#short" class="novel-card">
@@ -1200,7 +1169,7 @@
           <img src="moon-icon.PNG" alt="SHORT">
         </div>
         <h3>SHORT</h3>
-        <p>短編・SS</p>
+        
       </a>
 
       <a href="#other" class="novel-card">
@@ -1208,7 +1177,7 @@
           <img src="saturn-icon.PNG" alt="OTHER">
         </div>
         <h3>OTHER</h3>
-        <p>その他</p>
+     
       </a>
 
     </div>
