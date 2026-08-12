@@ -8,221 +8,1029 @@
   <title>Oxypetalum</title>
 
   <style>
+    /* =========================
+       基本設定
+    ========================= */
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
       margin: 0;
-      font-family: "Yu Mincho", "Hiragino Mincho ProN", serif;
+      font-family:
+        "Hiragino Mincho ProN",
+        "Yu Mincho",
+        "YuMincho",
+        serif;
 
-      background-color: #fafcff;
+      background: #07152f;
+      color: #f5f2e9;
+      line-height: 2;
+    }
 
-      color: #30384a;
-
-      line-height: 1.9;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
 
-    /* 上のメニュー */
+    /* =========================
+       ヘッダー
+    ========================= */
 
     header {
-      padding: 25px;
-      text-align: center;
-      font-size: 13px;
-      letter-spacing: 3px;
+      position: fixed;
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      padding: 20px 7%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      z-index: 1000;
+
+      background: rgba(5, 15, 35, 0.35);
+      backdrop-filter: blur(8px);
     }
 
-    header a {
-      color: #30384a;
-      text-decoration: none;
-      margin: 0 12px;
+    .site-name {
+      font-size: 18px;
+      letter-spacing: 4px;
     }
 
+    nav {
+      display: flex;
+      gap: 28px;
 
-    /* サイト全体 */
-
-    main {
-      width: 90%;
-      max-width: 650px;
-      margin: auto;
-    }
-
-
-    /* タイトル */
-
-    .title {
-      text-align: center;
-      padding: 80px 0 60px;
-    }
-
-    .title h1 {
-      font-size: 30px;
-      letter-spacing: 8px;
-      font-weight: normal;
-    }
-
-    .title p {
       font-size: 12px;
-      color: #7c8495;
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      color: #e1c47b;
     }
 
 
-    /* 星の区切り */
+    /* =========================
+       ハンバーガーメニュー
+    ========================= */
 
-    .stars {
+    .menu-button {
+      display: none;
+
+      border: none;
+      background: none;
+
+      color: white;
+
+      font-size: 28px;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       トップ
+    ========================= */
+
+    .hero {
+      min-height: 100vh;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
       text-align: center;
-      margin: 50px 0;
-      color: #8296bd;
-      letter-spacing: 10px;
+
+      position: relative;
+
+      background-image:
+        linear-gradient(
+          rgba(2, 10, 30, 0.20),
+          rgba(2, 10, 30, 0.55)
+        ),
+        url("star-bg.png");
+
+      background-size: cover;
+      background-position: center;
+
+      overflow: hidden;
     }
 
 
-    /* コンテンツ */
+    /* 星のきらめき */
+
+    .hero::after {
+      content: "";
+
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        radial-gradient(
+          circle,
+          rgba(255,255,255,0.9) 1px,
+          transparent 1px
+        );
+
+      background-size: 80px 80px;
+
+      opacity: 0.18;
+
+      animation: stars 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes stars {
+      from {
+        opacity: 0.10;
+      }
+
+      to {
+        opacity: 0.28;
+      }
+    }
+
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+
+      padding: 30px;
+    }
+
+    .hero-symbol {
+      font-size: 25px;
+      color: #d8b96a;
+
+      margin-bottom: 20px;
+    }
+
+    .hero h1 {
+      margin: 0;
+
+      font-size: clamp(32px, 7vw, 72px);
+
+      font-weight: normal;
+
+      letter-spacing: 12px;
+    }
+
+    .hero p {
+      margin-top: 25px;
+
+      font-size: 13px;
+
+      letter-spacing: 4px;
+
+      opacity: 0.9;
+    }
+
+    .scroll-down {
+      position: absolute;
+
+      bottom: 30px;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      z-index: 2;
+
+      font-size: 24px;
+
+      animation: float 2s infinite ease-in-out;
+    }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translate(-50%, 0);
+      }
+
+      50% {
+        transform: translate(-50%, 8px);
+      }
+    }
+
+
+    /* =========================
+       共通セクション
+    ========================= */
 
     section {
-      margin-bottom: 70px;
+      padding: 110px 8%;
     }
 
-    h2 {
-      font-size: 18px;
-      font-weight: normal;
-      letter-spacing: 3px;
-      border-bottom: 1px solid #d9deea;
-      padding-bottom: 10px;
+    .content {
+      width: 100%;
+      max-width: 760px;
+
+      margin: 0 auto;
     }
 
+    .section-title {
+      text-align: center;
 
-    /* 小説リンク */
+      margin-bottom: 60px;
+    }
 
-    .novel {
+    .section-title span {
       display: block;
 
-      padding: 18px;
-      margin: 15px 0;
+      color: #d8b96a;
 
-      background: white;
+      font-size: 18px;
 
-      border: 1px solid #e1e5ee;
+      margin-bottom: 10px;
+    }
 
-      text-decoration: none;
-      color: #30384a;
+    .section-title h2 {
+      margin: 0;
+
+      font-size: 22px;
+      font-weight: normal;
+
+      letter-spacing: 6px;
+    }
+
+    .section-title::after {
+      content: "";
+
+      display: block;
+
+      width: 45px;
+      height: 1px;
+
+      margin: 25px auto 0;
+
+      background: #d8b96a;
+    }
+
+
+    /* =========================
+       ABOUT
+    ========================= */
+
+    #about {
+      background: #111b2d;
+    }
+
+    #about p {
+      text-align: center;
+
+      font-size: 14px;
+
+      margin: 0 auto 25px;
+
+      max-width: 620px;
+    }
+
+
+    /* =========================
+       NOVEL
+    ========================= */
+
+    #novel {
+      background: #0b1730;
+    }
+
+    .novel-list {
+      display: grid;
+
+      gap: 18px;
+    }
+
+    .novel-card {
+      display: block;
+
+      padding: 25px 28px;
+
+      border: 1px solid rgba(216, 185, 106, 0.35);
+
+      background: rgba(255,255,255,0.03);
 
       transition: 0.3s;
     }
 
-    .novel:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 5px 15px rgba(90, 110, 160, 0.1);
+    .novel-card:hover {
+      transform: translateY(-4px);
+
+      border-color: #d8b96a;
+
+      background: rgba(255,255,255,0.07);
+    }
+
+    .novel-card small {
+      color: #d8b96a;
+
+      letter-spacing: 2px;
+    }
+
+    .novel-card h3 {
+      margin: 8px 0 0;
+
+      font-size: 18px;
+      font-weight: normal;
+
+      letter-spacing: 2px;
     }
 
 
-    footer {
+    /* =========================
+       丸い画像エリア
+    ========================= */
+
+    #gallery {
+      background: #111b2d;
+    }
+
+    .circle-list {
+      display: flex;
+
+      justify-content: center;
+      flex-wrap: wrap;
+
+      gap: 45px;
+    }
+
+    .circle-item {
+      width: 170px;
+
       text-align: center;
-      padding: 80px 0 40px;
+    }
+
+    .circle-image {
+      width: 150px;
+      height: 150px;
+
+      margin: 0 auto 18px;
+
+      border-radius: 50%;
+
+      border: 1px solid rgba(216,185,106,0.6);
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      font-size: 40px;
+
+      box-shadow:
+        0 0 30px rgba(70,130,210,0.15);
+
+      transition: 0.4s;
+    }
+
+    .circle-image:hover {
+      transform: translateY(-8px) scale(1.03);
+    }
+
+    .circle-item:nth-child(1) .circle-image {
+      background:
+        radial-gradient(
+          circle at 30% 20%,
+          #6faee2,
+          #173d73 50%,
+          #07152f
+        );
+    }
+
+    .circle-item:nth-child(2) .circle-image {
+      background:
+        radial-gradient(
+          circle at 30% 30%,
+          #a9c4ea,
+          #3b5687 45%,
+          #111b2d
+        );
+    }
+
+    .circle-item:nth-child(3) .circle-image {
+      background:
+        radial-gradient(
+          circle at 50% 20%,
+          #799ccc,
+          #263d6b 50%,
+          #081227
+        );
+    }
+
+    .circle-item p {
+      margin: 0;
+
+      font-size: 13px;
+
+      letter-spacing: 2px;
+    }
+
+
+    /* =========================
+       MEMO
+    ========================= */
+
+    #memo {
+      background: #0b1730;
+    }
+
+    .memo-box {
+      padding: 35px;
+
+      border-left: 1px solid #d8b96a;
+
+      background: rgba(255,255,255,0.03);
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    #contact {
+      background:
+        linear-gradient(
+          rgba(10,25,45,0.86),
+          rgba(10,25,45,0.93)
+        ),
+        url("star-bg.png");
+
+      background-size: cover;
+      background-position: center;
+    }
+
+    .contact-form {
+      display: grid;
+
+      gap: 16px;
+
+      max-width: 600px;
+
+      margin: auto;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+
+      padding: 15px;
+
+      border: 1px solid rgba(255,255,255,0.25);
+
+      background: rgba(255,255,255,0.10);
+
+      color: white;
+
+      font-family: inherit;
+
+      font-size: 14px;
+    }
+
+    textarea {
+      min-height: 180px;
+
+      resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: rgba(255,255,255,0.55);
+    }
+
+    .send-button {
+      width: 130px;
+
+      margin: 10px auto 0;
+
+      padding: 12px;
+
+      border: 1px solid #d8b96a;
+
+      background: transparent;
+
+      color: #f5f2e9;
+
+      font-family: inherit;
+
+      letter-spacing: 2px;
+
+      cursor: pointer;
+
+      transition: 0.3s;
+    }
+
+    .send-button:hover {
+      background: #d8b96a;
+      color: #07152f;
+    }
+
+    .contact-note {
+      margin-top: 20px;
+
+      text-align: center;
+
       font-size: 11px;
-      color: #9299a8;
+
+      opacity: 0.6;
+    }
+
+
+    /* =========================
+       フッター
+    ========================= */
+
+    footer {
+      padding: 60px 20px;
+
+      text-align: center;
+
+      background: #060e20;
+
+      font-size: 11px;
+
+      letter-spacing: 2px;
+
+      color: rgba(255,255,255,0.65);
+    }
+
+    footer .footer-star {
+      color: #d8b96a;
+
+      font-size: 20px;
+
+      margin-bottom: 15px;
+    }
+
+
+    /* =========================
+       上へ戻る
+    ========================= */
+
+    .to-top {
+      position: fixed;
+
+      right: 20px;
+      bottom: 20px;
+
+      width: 45px;
+      height: 45px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      background: rgba(6,14,32,0.75);
+
+      border: 1px solid rgba(216,185,106,0.4);
+
+      z-index: 999;
+    }
+
+
+    /* =========================
+       スマホ対応
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      header {
+        padding: 18px 22px;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      nav {
+        position: absolute;
+
+        top: 70px;
+        right: 20px;
+
+        display: none;
+        flex-direction: column;
+
+        width: 180px;
+
+        padding: 25px;
+
+        background: rgba(5,15,35,0.95);
+
+        border: 1px solid rgba(216,185,106,0.25);
+      }
+
+      nav.open {
+        display: flex;
+      }
+
+      .hero h1 {
+        letter-spacing: 7px;
+      }
+
+      section {
+        padding: 90px 7%;
+      }
+
+      .circle-list {
+        gap: 35px;
+      }
+
     }
 
   </style>
-
 </head>
 
 
 <body>
 
 
+<!-- =========================
+     ヘッダー
+========================= -->
+
 <header>
 
-  <a href="#about">ABOUT</a>
+  <a class="site-name" href="#top">
+    Oxypetalum
+  </a>
 
-  <a href="#novel">NOVEL</a>
+  <button
+    class="menu-button"
+    onclick="toggleMenu()"
+    aria-label="メニューを開く"
+  >
+    ☰
+  </button>
 
-  <a href="#memo">MEMO</a>
+  <nav id="menu">
+
+    <a href="#about">ABOUT</a>
+
+    <a href="#novel">NOVEL</a>
+
+    <a href="#gallery">STARS</a>
+
+    <a href="#memo">MEMO</a>
+
+    <a href="#contact">CONTACT</a>
+
+  </nav>
 
 </header>
 
 
-<main>
+<!-- =========================
+     トップ
+========================= -->
+
+<section class="hero" id="top">
+
+  <div class="hero-content">
+
+    <div class="hero-symbol">
+      ✦
+    </div>
+
+    <h1>Oxypetalum</h1>
+
+    <p>
+      星のあいだに、物語を結ぶ。
+    </p>
+
+  </div>
+
+  <a class="scroll-down" href="#about">
+    ⌄
+  </a>
+
+</section>
 
 
-<div class="title">
-
-  <div>✦</div>
-
-  <h1>Oxypetalum</h1>
-
-  <p>星と物語を置いておく、小さな書庫。</p>
-
-</div>
-
-
-<div class="stars">
-  ⋆　✦　⋆
-</div>
-
+<!-- =========================
+     ABOUT
+========================= -->
 
 <section id="about">
 
-<h2>✦ ABOUT</h2>
+  <div class="content">
 
-<p>
-ここはFate/Grand Orderの非公式二次創作サイトです。
-原作および公式各社とは一切関係ありません。
-</p>
+    <div class="section-title">
 
-<p>
-小説や設定、その他の記録を置いています。
-</p>
+      <span>✦</span>
+
+      <h2>ABOUT</h2>
+
+    </div>
+
+    <p>
+      ここは二次創作作品を中心に置いている、
+      個人運営の非公式ファンサイトです。
+    </p>
+
+    <p>
+      小説、設定、記録、その他の小さなものを、
+      星を拾うように少しずつ集めています。
+    </p>
+
+  </div>
 
 </section>
 
+
+<!-- =========================
+     NOVEL
+========================= -->
 
 <section id="novel">
 
-<h2>✦ NOVEL</h2>
+  <div class="content">
 
-<a class="novel" href="#">
-第一話　星のはじまり
-</a>
+    <div class="section-title">
 
-<a class="novel" href="#">
-第二話　星を結ぶもの
-</a>
+      <span>✦</span>
 
-<a class="novel" href="#">
-第三話
-</a>
+      <h2>NOVEL</h2>
+
+    </div>
+
+
+    <div class="novel-list">
+
+      <a class="novel-card" href="#">
+
+        <small>01</small>
+
+        <h3>
+          星を結ぶもの
+        </h3>
+
+      </a>
+
+
+      <a class="novel-card" href="#">
+
+        <small>02</small>
+
+        <h3>
+          短編・掌編集
+        </h3>
+
+      </a>
+
+
+      <a class="novel-card" href="#">
+
+        <small>03</small>
+
+        <h3>
+          その他の物語
+        </h3>
+
+      </a>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-<div class="stars">
-  ⋆｡˚ ✦ ˚｡⋆
-</div>
+<!-- =========================
+     丸いリンク
+========================= -->
 
+<section id="gallery">
+
+  <div class="content">
+
+    <div class="section-title">
+
+      <span>✦</span>
+
+      <h2>STARS</h2>
+
+    </div>
+
+
+    <div class="circle-list">
+
+      <a class="circle-item" href="#novel">
+
+        <div class="circle-image">
+          ✧
+        </div>
+
+        <p>STORY</p>
+
+      </a>
+
+
+      <a class="circle-item" href="#memo">
+
+        <div class="circle-image">
+          ☾
+        </div>
+
+        <p>CHARACTER</p>
+
+      </a>
+
+
+      <a class="circle-item" href="#memo">
+
+        <div class="circle-image">
+          ✦
+        </div>
+
+        <p>WORLD</p>
+
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     MEMO
+========================= -->
 
 <section id="memo">
 
-<h2>✦ MEMO</h2>
+  <div class="content">
 
-<p>
-人物設定、世界観、こぼれ話など。
-</p>
+    <div class="section-title">
+
+      <span>✦</span>
+
+      <h2>MEMO</h2>
+
+    </div>
+
+
+    <div class="memo-box">
+
+      <p>
+        2026.08.13<br>
+        サイトを開設しました。
+      </p>
+
+      <p>
+        ここには更新履歴、設定メモ、
+        お知らせなどを置く予定です。
+      </p>
+
+    </div>
+
+  </div>
 
 </section>
 
 
-</main>
+<!-- =========================
+     CONTACT
+========================= -->
 
+<section id="contact">
+
+  <div class="content">
+
+    <div class="section-title">
+
+      <span>✦</span>
+
+      <h2>CONTACT</h2>
+
+    </div>
+
+
+    <div class="contact-form">
+
+      <input
+        type="text"
+        placeholder="お名前"
+      >
+
+      <input
+        type="email"
+        placeholder="メールアドレス"
+      >
+
+      <textarea
+        placeholder="メッセージ"
+      ></textarea>
+
+      <button
+        class="send-button"
+        type="button"
+        onclick="contactDemo()"
+      >
+        SEND
+      </button>
+
+    </div>
+
+    <p class="contact-note">
+      ※現在はデザイン用のフォームです。
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     フッター
+========================= -->
 
 <footer>
 
-✦ Oxypetalum ✦
+  <div class="footer-star">
+    ✦
+  </div>
 
-<br><br>
+  <p>
+    Oxypetalum
+  </p>
 
-Unofficial Fan Site
+  <p>
+    Unofficial Fan Site
+  </p>
 
 </footer>
 
 
+<!-- 上へ戻る -->
+
+<a
+  class="to-top"
+  href="#top"
+  aria-label="ページ上部へ戻る"
+>
+  ↑
+</a>
+
+
+<!-- =========================
+     JavaScript
+========================= -->
+
+<script>
+
+  function toggleMenu() {
+
+    const menu =
+      document.getElementById("menu");
+
+    menu.classList.toggle("open");
+
+  }
+
+
+  function contactDemo() {
+
+    alert(
+      "現在このフォームには送信機能がありません。"
+    );
+
+  }
+
+
+  /* メニューを押したら閉じる */
+
+  document
+    .querySelectorAll("nav a")
+    .forEach(function(link) {
+
+      link.addEventListener(
+        "click",
+        function() {
+
+          document
+            .getElementById("menu")
+            .classList.remove("open");
+
+        }
+      );
+
+    });
+
+</script>
+
+
 </body>
+
 </html>
