@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow, noarchive, nosnippet"
+  >
+
+  <title>SHORT | Oxypetalum</title>
+
+  <style>
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+
+      font-family:
+        "Hiragino Mincho ProN",
+        "Yu Mincho",
+        "YuMincho",
+        serif;
+
+      color: #f5f2e9;
+      line-height: 2;
+
+      background:
+        linear-gradient(
+          rgba(5, 15, 35, 0.88),
+          rgba(5, 15, 35, 0.96)
+        ),
+        url("star-bg.PNG");
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      position: fixed;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+      padding: 20px 7%;
+
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      z-index: 100;
+
+      background: rgba(5, 15, 35, 0.55);
+
+      backdrop-filter: blur(8px);
+    }
+
+    .site-name {
+      font-size: 18px;
+      letter-spacing: 4px;
+    }
+
+    .back-top {
+      font-size: 12px;
+      letter-spacing: 2px;
+
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+
+    .back-top:hover {
+      color: #d8b96a;
+      opacity: 1;
+    }
+
+    main {
+      min-height: 100vh;
+
+      padding:
+        150px 7%
+        100px;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 760px;
+
+      margin: 0 auto;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 70px;
+    }
+
+    .page-title .symbol {
+      color: #d8b96a;
+      font-size: 20px;
+
+      margin-bottom: 12px;
+    }
+
+    .page-title h1 {
+      margin: 0;
+
+      font-size: 28px;
+      font-weight: normal;
+
+      letter-spacing: 8px;
+    }
+
+    .page-title::after {
+      content: "";
+
+      display: block;
+
+      width: 50px;
+      height: 1px;
+
+      margin: 28px auto;
+
+      background: #d8b96a;
+    }
+
+    .page-title p {
+      margin: 0;
+
+      font-size: 13px;
+      letter-spacing: 2px;
+
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .works {
+      display: grid;
+      gap: 28px;
+    }
+
+    .work {
+      display: block;
+
+      padding: 30px 28px;
+
+      background:
+        rgba(255, 255, 255, 0.035);
+
+      border-left:
+        1px solid
+        rgba(216, 185, 106, 0.75);
+
+      transition:
+        transform 0.3s,
+        background 0.3s;
+    }
+
+    .work:hover {
+      transform:
+        translateY(-3px);
+
+      background:
+        rgba(255, 255, 255, 0.065);
+    }
+
+    .work-title {
+      margin: 0 0 8px;
+
+      color: #f3e7bf;
+
+      font-size: 19px;
+      font-weight: normal;
+
+      letter-spacing: 2px;
+    }
+
+    .work-meta {
+      margin: 0 0 14px;
+
+      color: #d8b96a;
+
+      font-size: 11px;
+      letter-spacing: 1.5px;
+    }
+
+    .work-description {
+      margin: 0;
+
+      font-size: 13px;
+
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.78
+        );
+    }
+
+    .work-status {
+      display: inline-block;
+
+      margin-top: 15px;
+
+      font-size: 10px;
+      letter-spacing: 2px;
+
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.55
+        );
+    }
+
+    .bottom-link {
+      margin-top: 80px;
+      text-align: center;
+    }
+
+    .bottom-link a {
+      display: inline-block;
+
+      padding: 8px 18px;
+
+      border:
+        1px solid
+        rgba(
+          216,
+          185,
+          106,
+          0.55
+        );
+
+      font-size: 11px;
+      letter-spacing: 2px;
+
+      transition: 0.3s;
+    }
+
+    .bottom-link a:hover {
+      background: #d8b96a;
+      color: #07152f;
+    }
+
+    footer {
+      padding: 40px 20px;
+
+      text-align: center;
+
+      background:
+        rgba(
+          3,
+          10,
+          25,
+          0.75
+        );
+
+      font-size: 10px;
+      letter-spacing: 2px;
+
+      color:
+        rgba(
+          255,
+          255,
+          255,
+          0.55
+        );
+    }
+
+    @media (max-width: 700px) {
+
+      header {
+        padding:
+          18px
+          22px;
+      }
+
+      main {
+        padding:
+          130px
+          7%
+          80px;
+      }
+
+      .page-title h1 {
+        font-size: 24px;
+        letter-spacing: 6px;
+      }
+
+      .work {
+        padding:
+          25px
+          22px;
+      }
+
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+<header>
+
+  <a
+    class="site-name"
+    href="index.html"
+  >
+    Oxypetalum
+  </a>
+
+  <a
+    class="back-top"
+    href="index.html#novel"
+  >
+    ← TOP
+  </a>
+
+</header>
+
+
+<main>
+
+  <div class="content">
+
+    <div class="page-title">
+
+      <div class="symbol">
+        ✦
+      </div>
+
+      <h1>SHORT</h1>
+
+      <p>
+        短編・SS
+      </p>
+
+    </div>
+
+
+    <div class="works">
+
+
+      <a
+        class="work"
+        href="#"
+      >
+
+        <h2 class="work-title">
+          短編タイトル
+        </h2>
+
+        <p class="work-meta">
+          Fate/Grand Order
+        </p>
+
+        <p class="work-description">
+          ここに短編作品の簡単な説明を入れます。
+        </p>
+
+        <span class="work-status">
+          完結
+        </span>
+
+      </a>
+
+
+      <a
+        class="work"
+        href="#"
+      >
+
+        <h2 class="work-title">
+          SSタイトル
+        </h2>
+
+        <p class="work-meta">
+          Fate/Grand Order
+        </p>
+
+        <p class="work-description">
+          ここにSSの簡単な説明を入れます。
+        </p>
+
+        <span class="work-status">
+          SS
+        </span>
+
+      </a>
+
+
+    </div>
+
+
+    <div class="bottom-link">
+
+      <a href="index.html#novel">
+        ← NOVEL
+      </a>
+
+    </div>
+
+  </div>
+
+</main>
+
+
+<footer>
+
+  Oxypetalum
+  ·
+  Unofficial Fan Site
+
+</footer>
+
+
+</body>
+
+</html>
