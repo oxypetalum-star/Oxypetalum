@@ -485,84 +485,51 @@
        CONTACT
     ========================= */
 
-    #contact {
-      background:
-        linear-gradient(
-          rgba(10,25,45,0.86),
-          rgba(10,25,45,0.93)
-        ),
-        url("star-bg.PNG");
+.contact-links {
+  max-width: 560px;
+  margin: 40px auto 0;
+  display: grid;
+  gap: 18px;
+}
 
-      background-size: cover;
-      background-position: center;
-    }
+.contact-link {
+  display: block;
+  padding: 22px 26px;
 
-    .contact-form {
-      display: grid;
+  border: 1px solid rgba(216, 185, 106, 0.55);
 
-      gap: 16px;
+  background: rgba(7, 21, 47, 0.45);
 
-      max-width: 600px;
-      margin: auto;
-    }
+  transition:
+    transform 0.3s,
+    background 0.3s;
+}
 
-    input,
-    textarea {
-      width: 100%;
+.contact-link:hover {
+  transform: translateY(-3px);
 
-      padding: 15px;
+  background: rgba(216, 185, 106, 0.08);
+}
 
-      border: 1px solid rgba(255,255,255,0.25);
+.contact-name {
+  display: block;
 
-      background: rgba(255,255,255,0.10);
+  color: #f3e7bf;
 
-      color: white;
+  font-size: 15px;
+  letter-spacing: 2px;
+}
 
-      font-family: inherit;
-      font-size: 14px;
-    }
+.contact-text {
+  display: block;
 
-    textarea {
-      min-height: 180px;
-      resize: vertical;
-    }
+  margin-top: 5px;
 
-    input::placeholder,
-    textarea::placeholder {
-      color: rgba(255,255,255,0.55);
-    }
+  color: rgba(255, 255, 255, 0.65);
 
-    .send-button {
-      width: 130px;
-
-      margin: 10px auto 0;
-      padding: 12px;
-
-      border: 1px solid #d8b96a;
-
-      background: transparent;
-      color: #f5f2e9;
-
-      font-family: inherit;
-      letter-spacing: 2px;
-
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .send-button:hover {
-      background: #d8b96a;
-      color: #07152f;
-    }
-
-    .contact-note {
-      margin-top: 20px;
-
-      text-align: center;
-      font-size: 11px;
-
-      opacity: 0.6;
-    }
+  font-size: 11px;
+  letter-spacing: 1px;
+}
 
 
     /* =========================
@@ -884,48 +851,33 @@
      CONTACT
 ========================= -->
 
-<section id="contact">
+<div class="contact-links">
 
-  <div class="content">
+  <a
+    href="https://x.com/blue_star1101?s=11&t=ntcINT7eThDIfUaS66t2ug"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contact-link"
+  >
+    <span class="contact-name">Twitter / X</span>
+    <span class="contact-text">
+      更新情報・ご連絡はこちら
+    </span>
+  </a>
 
-    <div class="section-title">
-      <span>✦</span>
-      <h2>CONTACT</h2>
-    </div>
+  <a
+    href="https://marshmallow-qa.com/bhjrjr3046c2ux1?t=uNZ662&utm_medium=url_text&utm_source=promotion"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="contact-link"
+  >
+    <span class="contact-name">Marshmallow</span>
+    <span class="contact-text">
+      感想などお気軽にどうぞ
+    </span>
+  </a>
 
-    <div class="contact-form">
-
-      <input
-        type="text"
-        placeholder="お名前"
-      >
-
-      <input
-        type="email"
-        placeholder="メールアドレス"
-      >
-
-      <textarea
-        placeholder="メッセージ"
-      ></textarea>
-
-      <button
-        class="send-button"
-        type="button"
-        onclick="contactDemo()"
-      >
-        SEND
-      </button>
-
-    </div>
-
-    <p class="contact-note">
-      ※現在はデザイン用のフォームです。
-    </p>
-
-  </div>
-
-</section>
+</div>
 
 
 <!-- =========================
