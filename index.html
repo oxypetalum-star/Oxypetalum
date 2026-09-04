@@ -503,51 +503,85 @@
        CONTACT
     ========================= */
 
-.contact-links {
-  max-width: 560px;
-  margin: 40px auto 0;
-  display: grid;
-  gap: 18px;
-}
+    #contact {
+      background: #111b2d;
+    }
 
-.contact-link {
-  display: block;
-  padding: 22px 26px;
+    .contact-links {
+      max-width: 560px;
+      margin: 40px auto 0;
+      display: grid;
+      gap: 18px;
+    }
 
-  border: 1px solid rgba(216, 185, 106, 0.55);
+    .contact-link {
+      display: block;
+      padding: 22px 26px;
 
-  background: rgba(7, 21, 47, 0.45);
+      border: 1px solid rgba(216, 185, 106, 0.55);
 
-  transition:
-    transform 0.3s,
-    background 0.3s;
-}
+      background: rgba(7, 21, 47, 0.45);
 
-.contact-link:hover {
-  transform: translateY(-3px);
+      transition:
+        transform 0.3s,
+        background 0.3s;
+    }
 
-  background: rgba(216, 185, 106, 0.08);
-}
+    .contact-link:hover {
+      transform: translateY(-3px);
 
-.contact-name {
-  display: block;
+      background: rgba(216, 185, 106, 0.08);
+    }
 
-  color: #f3e7bf;
+    .contact-name {
+      display: block;
 
-  font-size: 15px;
-  letter-spacing: 2px;
-}
+      color: #f3e7bf;
 
-.contact-text {
-  display: block;
+      font-size: 15px;
+      letter-spacing: 2px;
+    }
 
-  margin-top: 5px;
+    .contact-text {
+      display: block;
 
-  color: rgba(255, 255, 255, 0.65);
+      margin-top: 5px;
 
-  font-size: 11px;
-  letter-spacing: 1px;
-}
+      color: rgba(255, 255, 255, 0.65);
+
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+
+    /* =========================
+       RANK
+    ========================= */
+
+    #rank {
+      background: #0b1730;
+    }
+
+    .rank-links {
+      display: flex;
+      justify-content: center;
+      gap: 18px 30px;
+      flex-wrap: wrap;
+      text-align: center;
+      font-size: 13px;
+      letter-spacing: 2px;
+    }
+
+    .rank-links a {
+      color: #f3e7bf;
+      opacity: 0.8;
+      transition: 0.3s;
+    }
+
+    .rank-links a:hover {
+      opacity: 1;
+      color: #e1c47b;
+    }
 
 
     /* =========================
@@ -689,6 +723,8 @@
 
     <a href="#contact">CONTACT</a>
 
+    <a href="#rank">RANK</a>
+
   </nav>
 
 </header>
@@ -774,9 +810,9 @@
     </p>
     
     <p>
-  一部の作品はPixivにも掲載しています。
-  Pixiv上の「二重アゴ」名義の作品は、当サイト管理人本人による掲載です。
-</p>
+      一部の作品はPixivにも掲載しています。
+      Pixiv上の「二重アゴ」名義の作品は、当サイト管理人本人による掲載です。
+    </p>
 
     <p>
       管理人：二重アゴ
@@ -903,34 +939,70 @@
 <!-- =========================
      CONTACT
 ========================= -->
+
 <section id="contact">
-<div class="contact-links">
 
-  <a
-    href="https://x.com/blue_star1101?s=11&t=ntcINT7eThDIfUaS66t2ug"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="contact-link"
-  >
-    <span class="contact-name">Twitter / X</span>
-    <span class="contact-text">
-      更新情報・ご連絡はこちら
-    </span>
-  </a>
+  <div class="content">
 
-  <a
-    href="https://marshmallow-qa.com/bhjrjr3046c2ux1?t=uNZ662&utm_medium=url_text&utm_source=promotion"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="contact-link"
-  >
-    <span class="contact-name">Marshmallow</span>
-    <span class="contact-text">
-      感想などお気軽にどうぞ
-    </span>
-  </a>
+    <div class="section-title">
+      <span>✦</span>
+      <h2>CONTACT</h2>
+    </div>
 
-</div>
+    <div class="contact-links">
+
+      <a
+        href="https://x.com/blue_star1101?s=11&t=ntcINT7eThDIfUaS66t2ug"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-link"
+      >
+        <span class="contact-name">Twitter / X</span>
+        <span class="contact-text">
+          更新情報・ご連絡はこちら
+        </span>
+      </a>
+
+      <a
+        href="https://marshmallow-qa.com/bhjrjr3046c2ux1?t=uNZ662&utm_medium=url_text&utm_source=promotion"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="contact-link"
+      >
+        <span class="contact-name">Marshmallow</span>
+        <span class="contact-text">
+          感想などお気軽にどうぞ
+        </span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================
+     RANK
+========================= -->
+
+<section id="rank">
+
+  <div class="content">
+
+    <div class="section-title">
+      <span>✦</span>
+      <h2>RANK</h2>
+    </div>
+
+    <div class="rank-links">
+      <a href="http://01.rknt.jp/entry.php?in_id=1821&id=aval0n&guid=on">Avalon</a>
+      <a href="http://01s.rknt.jp/entry.php?in_id=1821&id=cica&guid=on">叱らないで</a>
+    </div>
+
+  </div>
+
+</section>
 
 
 <!-- =========================
